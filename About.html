@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-900">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Michael Rhoades — About</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://kit.fontawesome.com/f6fa6751e0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root{
+      --primary: #6366f1;
+      --accent: #7c3aed;
+      --card-border: rgba(255,255,255,0.04);
+      --muted: rgba(230,238,248,0.55);
+    }
+
+    /* Shared glass / theme utilities */
+    .glass-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .gradient-text{
+      background-image: linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .focus-ring:focus{
+      outline: 2px solid rgba(99,102,241,0.22);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    /* About specific */
+    .info-row{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .info-icon{
+      min-width: 48px;
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: linear-gradient(135deg,var(--primary),var(--accent));
+      color: white;
+      font-weight: 700;
+    }
+    .info-label{
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(230,238,248,0.45);
+    }
+    .info-value{
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .large-note{
+      padding: 1.25rem;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      border: 1px solid rgba(255,255,255,0.03);
+      color: rgba(230,238,248,0.85);
+    }
+
+    @media (max-width: 640px){
+      .info-row{ flex-direction: row; }
+    }
+  </style>
+</head>
+<body class="min-h-screen pt-16 bg-gray-900 text-white">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+<!-- Nav (consistent) -->
+<nav class="fixed inset-x-0 top-0 z-40 bg-gray-900/30 backdrop-blur-sm border-b border-white/5">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <div class="flex items-center">
+        <a href="Index.html" class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-semibold">MR</div>
+          <span class="hidden sm:inline text-white font-medium">Michael Rhoades</span>
+        </a>
+
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="Index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Home</a>
+            <a href="Projects.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+            <a href="About.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white bg-gray-700/50">About</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="-mr-2 flex md:hidden">
+        <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-none focus-ring">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="w-6 h-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <el-disclosure id="mobile-menu" hidden class="block md:hidden">
+    <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+      <a href="Index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Home</a>
+      <a href="Projects.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+      <a href="About.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white bg-gray-700/50">About</a>
+    </div>
+  </el-disclosure>
+</nav>
+
+<main class="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+  <div class="text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold">About Me</h1>
+    <p class="mt-3 text-lg text-stone-300">A bit more about my background and skills.</p>
+  </div>
+
+  <div class="mt-12 space-y-4">
+    <!-- Name -->
+    <div class="info-row">
+      <div class="info-icon" aria-hidden="true">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <div class="flex-1">
+        <div class="info-label">Name</div>
+        <div class="info-value">Michael Rhoades</div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="info-row">
+      <div class="info-icon" aria-hidden="true">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="flex-1">
+        <div class="info-label">Education</div>
+        <div class="info-value">Ranken Technical College — Application &amp; Web Development</div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="info-row">
+      <div class="info-icon" aria-hidden="true">
+        <i class="fa-solid fa-code"></i>
+      </div>
+      <div class="flex-1">
+        <div class="info-label">Languages</div>
+        <div class="info-value">JavaScript, TypeScript, HTML, CSS, C#, SQL</div>
+      </div>
+    </div>
+
+    <!-- Large note / contact -->
+    <div class="large-note glass-card">
+      <p class="mb-0">
+        I'm focused on building accessible, responsive, and well-structured applications.
+        Currently open to freelance and contract opportunities — <a href="mailto:hi@example.com" class="text-indigo-400 hover:underline">get in touch</a>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="border-t border-white/5 py-6">
+  <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+    <p class="text-sm text-stone-400">© <span id="year"></span> Michael Rhoades</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
